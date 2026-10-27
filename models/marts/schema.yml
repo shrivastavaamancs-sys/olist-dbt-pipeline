@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension table with order metrics"
+    columns:
+      - name: customer_id
+        description: "Primary key for customer staging"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: "Fact table for all e-commerce orders"
+    columns:
+      - name: order_id
+        description: "Primary key for orders"
+        data_tests:
+          - unique
+          - not_null
